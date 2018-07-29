@@ -1,9 +1,8 @@
 # skeleton-based-action-recognition-review
-skeleton-based action recognition summary
 
-1. Datasets
+## 1. Datasets
 
-(1). pose estimation
+### (1). pose estimation
 
 给定图片，设计相关网络学习图片中人物的关键点信息
 
@@ -17,11 +16,9 @@ skeleton-based action recognition summary
   - 样本数：21W Training, 3W Validation, 3W Testing，关节点个数：14
   - 全身，多人，38W people
 
-(2). 3D activity analysis datasets
+### (2). 3D activity analysis datasets
 
 相对于只给出RGB视频的kinetics等数据集而言，该类动作数据集还提供了人物的skeleton信息等，各数据集大致对比如下图
-
-
 
 - NTU RGB+D
   - 目前最大的3d动作识别数据集
