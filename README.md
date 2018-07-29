@@ -41,9 +41,9 @@
 
 
 
-2. Methods
+##  2. Methods
 
-(1). pose estimation methods
+### (1). pose estimation methods
 
 [1]. Stacked Hourglass Networks for Human Pose Estimation
 
@@ -66,7 +66,7 @@ https://github.com/handong1587/handong1587.github.io/blob/master/_posts/deep_lea
 
 
 
-(2). 3d action recognition
+### (2). 3d action recognition
 
 概览
 
@@ -95,7 +95,7 @@ some preview:
 - 基于CNN的动作识别框架
   - 将skeleton序列表示为一张大小为(序列长度, 关键点个数, 关键点维度)的图像，如一段帧数为32且每帧包含16个关键点的二维信息的序列可以表示为(32, 16, 2)的tensor
 
-[1]. Co-occurrence Feature Learning for Skeleton based Action Recognition using Regularized Deep LSTM Networks
+#### [1]. Co-occurrence Feature Learning for Skeleton based Action Recognition using Regularized Deep LSTM Networks
 
 https://arxiv.org/pdf/1603.07772.pdf
 
@@ -115,7 +115,7 @@ https://arxiv.org/pdf/1603.07772.pdf
   - 网络由3个双向LSTM和2个fc层组成，co-occurrence learning均在第2个lstm网络之前完成
     
 
-[2]. An End-to-End Spatio-Temporal Attention Model for Human Action Recognition from Skeleton Data
+#### [2]. An End-to-End Spatio-Temporal Attention Model for Human Action Recognition from Skeleton Data
 
 https://arxiv.org/pdf/1611.06067.pdf
 
@@ -143,7 +143,7 @@ https://arxiv.org/pdf/1611.06067.pdf
     - 第二个正则项可防止梯度消失
     - 第三个正则项可防止网络过拟合
 
-[3]. SKELETON-BASED ACTION RECOGNITION USING LSTM AND CNN
+#### [3]. SKELETON-BASED ACTION RECOGNITION USING LSTM AND CNN
 
 https://arxiv.org/pdf/1707.02356.pdf
 
@@ -165,7 +165,7 @@ https://arxiv.org/pdf/1707.02356.pdf
   - lstm有3层，cnn网络是AlexNet的结构
   
 
-[4]. View Adaptive Neural Networks for High Performance Skeleton-based Human Action Recognition
+#### [4]. View Adaptive Neural Networks for High Performance Skeleton-based Human Action Recognition
 
 https://arxiv.org/pdf/1804.07453.pdf
 
@@ -189,7 +189,7 @@ https://arxiv.org/pdf/1804.07453.pdf
   - View Adaptation subnetwork由2个卷积层和1个fc层构成，卷积层的配置均为：channels=128, kernel size=5, stride=2
   - main convet是ResNet-50
 
-[5]. Co-occurrence Feature Learning from Skeleton Data for Action Recognition and Detection with Hierarchical Aggregation
+#### [5]. Co-occurrence Feature Learning from Skeleton Data for Action Recognition and Detection with Hierarchical Aggregation
 
 https://arxiv.org/pdf/1804.06055.pdf
 
@@ -200,7 +200,7 @@ https://arxiv.org/pdf/1804.06055.pdf
   - skeleton和skeleton motion信息各经过4个卷积层后concat到一起，再经过一些卷积层和全连接层后得到最终的分类结果
   
 
-[6]. Spatial Temporal Graph Convolutional Networks for Skeleton-Based Action Recognition
+#### [6]. Spatial Temporal Graph Convolutional Networks for Skeleton-Based Action Recognition
 
 https://arxiv.org/pdf/1801.07455.pdf
 
