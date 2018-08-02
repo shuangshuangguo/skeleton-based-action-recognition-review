@@ -69,6 +69,7 @@ https://github.com/handong1587/handong1587.github.io/blob/master/_posts/deep_lea
 ### (2). 3d action recognition
 
 概览
+
 | paper id | NTU RGB+D(cs, cv) |  SBU   |
 | :------: | :---------------: | :----: |
 |    1     |         -         | 90.41% |
