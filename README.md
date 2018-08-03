@@ -178,13 +178,13 @@ https://github.com/handong1587/handong1587.github.io/blob/master/_posts/deep_lea
 
   - 关键点j和k之间的相对位置表示为：
 
-    ![3_1](../youdaoyun/图片集/skeleton/3_1.jpg)
+    ![3_1](https://github.com/shuangshuangguo/skeleton-based-action-recognition-review/tree/master/sources/3_1.jpg)
 
   - 关键点j和k之间的欧式距离表示为：
-![3_2](../youdaoyun/图片集/skeleton/3_2.jpg)
+![3_2](https://github.com/shuangshuangguo/skeleton-based-action-recognition-review/tree/master/sources/3_2.jpg)
 
   - 关键点n到线jk的距离表示为：
-![3_3](../youdaoyun/图片集/skeleton/3_3.jpg)
+![3_3](https://github.com/shuangshuangguo/skeleton-based-action-recognition-review/tree/master/sources/3_3.jpg)
 
 - TPF即temporal-domain-feature作为CNN的输入
 
@@ -199,7 +199,7 @@ https://github.com/handong1587/handong1587.github.io/blob/master/_posts/deep_lea
 - 计算好上述提到的特征后，分别送入相应的lstm网络(3个)和cnn网络(7个)
 
   - lstm有3层，cnn网络是AlexNet的结构
-![3_4](../youdaoyun/图片集/skeleton/3_4.jpg)
+![3_4](.https://github.com/shuangshuangguo/skeleton-based-action-recognition-review/tree/master/sources/3_4.jpg)
 
 #### [4]. [View Adaptive Neural Networks for High Performance Skeleton-based Human Action Recognition](https://arxiv.org/pdf/1804.07453.pdf)
 
@@ -209,29 +209,29 @@ https://github.com/handong1587/handong1587.github.io/blob/master/_posts/deep_lea
   - observation coordinate system $$O'_{t}$$
   - O坐标系的关键点$$v_{t,j} = [x_{t,j} , y_{t,j} , z_{t,j}]^T$$在$$O'_{t}$$坐标系下相对应的关键点为：
 
-![4_1](../youdaoyun/图片集/skeleton/4_1.jpg)
+![4_1](https://github.com/shuangshuangguo/skeleton-based-action-recognition-review/tree/master/sources/4_1.jpg)
 
   其中，**R**为旋转矩阵，由网络学出的旋转参数$${\alpha, \beta, \gamma}$$构建得到，**d**为平移参数
 
   - 下图是更形象的表示：
 
-![4_2](../youdaoyun/图片集/skeleton/4_2.jpg)
+![4_2](https://github.com/shuangshuangguo/skeleton-based-action-recognition-review/tree/master/sources/4_2.jpg)
 
 - 基于RNN的视角自适应网络，View Adaptive Recurrent Neural Network (VA-RNN)
 
-  ![4_3](../youdaoyun/图片集/skeleton/4_3.jpg)
+  ![4_3](https://github.com/shuangshuangguo/skeleton-based-action-recognition-review/tree/master/sources/4_3.jpg)
 
   - View Adaptation subnetwork的两个分支都由LSTM和fc层构成，分别学习转换矩阵的旋转参数$${\alpha, \beta, \gamma}$$和平移参数$$d$$
 
     下式的$$h_t$$表示第t时刻LSTM层的输出
 
-    ![4_4](../youdaoyun/图片集/skeleton/4_4.jpg)
+    ![4_4](https://github.com/shuangshuangguo/skeleton-based-action-recognition-review/tree/master/sources/4_4.jpg)
 
-    ![4_5](../youdaoyun/图片集/skeleton/4_5.jpg)
+    ![4_5](https://github.com/shuangshuangguo/skeleton-based-action-recognition-review/tree/master/sources/4_5.jpg)
 
 - 基于CNN的视角自适应网络，View Adaptive Convolution Neural Network (VA- CNN)
 
-  ![4_6](../youdaoyun/图片集/skeleton/4_6.jpg)
+  ![4_6](https://github.com/shuangshuangguo/skeleton-based-action-recognition-review/tree/master/sources/4_6.jpg)
 
   - 不再像rnn那样对每一帧都学习旋转参数，cnn对整个序列学习一致的旋转参数
   - View Adaptation subnetwork由2个卷积层和1个fc层构成，卷积层的配置均为：channels=128, kernel size=5, stride=2
@@ -247,7 +247,7 @@ https://github.com/handong1587/handong1587.github.io/blob/master/_posts/deep_lea
   - 同时利用skeleton motion信息(简单地定义为两帧之间的skeleton信息的差)，motion信息的处理类似上述步骤
   - skeleton和skeleton motion信息各经过4个卷积层后concat到一起，再经过一些卷积层和全连接层后得到最终的分类结果
 
-  ![5_1](../youdaoyun/图片集/skeleton/5_1.jpg)
+  ![5_1](https://github.com/shuangshuangguo/skeleton-based-action-recognition-review/tree/master/sources/5_1.jpg)
 
 #### [6]. [Spatial Temporal Graph Convolutional Networks for Skeleton-Based Action Recognition](https://arxiv.org/pdf/1801.07455.pdf)
 
@@ -255,7 +255,7 @@ https://github.com/handong1587/handong1587.github.io/blob/master/_posts/deep_lea
 
 - 时空图的构造
 
-  ![6_1](../youdaoyun/图片集/skeleton/6_1.jpg)
+  ![6_1](https://github.com/shuangshuangguo/skeleton-based-action-recognition-review/tree/master/sources/6_1.jpg)
 
   - 所有帧的全部关键点组成图的节点集合V
   - 同一帧的不同相连关键点之间建立spatial edges
@@ -265,7 +265,7 @@ https://github.com/handong1587/handong1587.github.io/blob/master/_posts/deep_lea
 
   - 回顾二维的卷积操作，在空间位置x处的输出值取决于x的邻域点集合及在每一点上的权重大小(滤波器参数)
 
-    ![6_2](../youdaoyun/图片集/skeleton/6_2.jpg)
+    ![6_2](https://github.com/shuangshuangguo/skeleton-based-action-recognition-review/tree/master/sources/6_2.jpg)
 
   - 类比卷积操作的实现，GCN需要做两件事
 
@@ -275,7 +275,7 @@ https://github.com/handong1587/handong1587.github.io/blob/master/_posts/deep_lea
 
     - 具体公式如下
 
-      ![6_3](../youdaoyun/图片集/skeleton/6_3.jpg)
+      ![6_3](https://github.com/shuangshuangguo/skeleton-based-action-recognition-review/tree/master/sources/6_3.jpg)
 
       其中$$B(v_{ti})$$表示$$v_{ti}$$的邻域集合，$$l_{ti}(v_{tj})$$表示该邻域节点$$v_{tj}$$的权重大小
 
@@ -294,7 +294,7 @@ https://github.com/handong1587/handong1587.github.io/blob/master/_posts/deep_lea
 
   三种不同的划分方式分别如下图b, c, d所示：
 
-  ![6_4](../youdaoyun/图片集/skeleton/6_4.jpg)
+  ![6_4](https://github.com/shuangshuangguo/skeleton-based-action-recognition-review/tree/master/sources/6_4.jpg)
 
 - 实现ST-GCN
 
@@ -302,7 +302,7 @@ https://github.com/handong1587/handong1587.github.io/blob/master/_posts/deep_lea
 
   - 根据上述公式，输出可表示为：
 
-    ![6_5](../youdaoyun/图片集/skeleton/6_5.jpg)
+    ![6_5](https://github.com/shuangshuangguo/skeleton-based-action-recognition-review/tree/master/sources/6_5.jpg)
 
 #### Other references：
 
