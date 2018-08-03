@@ -19,7 +19,8 @@
 #### (2). 3D activity analysis datasets
 
 相对于只给出RGB视频的kinetics等数据集而言，该类动作数据集还提供了人物的skeleton信息等，各数据集大致对比如下图
-![datasets comparison](../youdaoyun/图片集/skeleton/datasets comparison.jpg)
+
+![datasets comparison](https://github.com/shuangshuangguo/skeleton-based-action-recognition-review/tree/master/sources/datasets_comparison.jpg)
 
 - NTU RGB+D
   - **目前最大的3d动作识别数据集**
@@ -53,7 +54,7 @@
   - 重复bottom-up和top-down操作，以及使用中层监督方式
 
 - hourglass网络结构
-![hourglass](../youdaoyun/图片集/skeleton/hourglass.jpg)
+![hourglass](https://github.com/shuangshuangguo/skeleton-based-action-recognition-review/tree/master/sources/hourglass.jpg)
   - 每次降采样之前，分出上半路保留原尺度信息
   - 每次升采样之后，和上一个尺度的数据相加
   - 两次降采样之间，使用三个Residual模块提取特征
@@ -106,9 +107,9 @@ https://github.com/handong1587/handong1587.github.io/blob/master/_posts/deep_lea
   - 学习Co-occurrence，将LSTM每一层的N个神经元分为K个组，每组的神经元共同负责一类或多类动作的判别力强的关键点集合，它们共同地和某些关节点有更大的连接权值，而和其他关节点有较小的连接权值
 
     如下图所示，第k组的神经元都只和某些节点有连接
-![1_1](../youdaoyun/图片集/skeleton/1_1.jpg)
+![1_1](https://github.com/shuangshuangguo/skeleton-based-action-recognition-review/tree/master/sources/1_1.jpg)
   - 如何实现分组神经元：
-![1_2](../youdaoyun/图片集/skeleton/1_2.jpg)
+![1_2](https://github.com/shuangshuangguo/skeleton-based-action-recognition-review/tree/master/sources/1_2.jpg)
     - 在损失函数里增加co-occurrence正则项，$$W_{x\beta, k}$$表示第k组神经元的参数矩阵，若它能学到某些动作的关键点连接模式，那它将会是column sparse的，即loss最小
 
 - 对LSTM网络的改进2：
@@ -117,7 +118,7 @@ https://github.com/handong1587/handong1587.github.io/blob/master/_posts/deep_lea
 
 - 整体网络结构如下图所示
 
-  ![1_3](../youdaoyun/图片集/skeleton/1_3.jpg)
+  ![1_3](https://github.com/shuangshuangguo/skeleton-based-action-recognition-review/tree/master/sources/1_3.jpg)
 
   - 网络由3个双向LSTM和2个fc层组成，co-occurrence learning均在第2个lstm网络之前完成
 
@@ -136,7 +137,7 @@ https://github.com/handong1587/handong1587.github.io/blob/master/_posts/deep_lea
 
 - 整体网络结构如下图所示
 
-![2_1](../youdaoyun/图片集/skeleton/2_1.jpg)
+![2_1](https://github.com/shuangshuangguo/skeleton-based-action-recognition-review/tree/master/sources/2_1.jpg)
 
   - 输入t时刻的关键点信息，经空间注意力机制模块后，每个关键点的信息被空间权重$$\alpha$$调制，后送入基本的LSTM分类网络，时序注意力机制模块输出的时序权重$$\beta$$加权不同时刻的LSTM输出
 
@@ -146,7 +147,7 @@ https://github.com/handong1587/handong1587.github.io/blob/master/_posts/deep_lea
 
   - 该模块的输出为：第k个关键点重要性的得分：
 
-![2_2](../youdaoyun/图片集/skeleton/2_2.jpg)
+![2_2](https://github.com/shuangshuangguo/skeleton-based-action-recognition-review/tree/master/sources/2_2.jpg)
 
   - 归一化上述得分即可得到每个关键点的权重$$\alpha$$
 
@@ -156,13 +157,13 @@ https://github.com/handong1587/handong1587.github.io/blob/master/_posts/deep_lea
 
   - 序列的类别得分由所有时刻的得分通过时序权重$$\beta$$加权得到
 
-![2_3](../youdaoyun/图片集/skeleton/2_3.jpg)
+![2_3](.https://github.com/shuangshuangguo/skeleton-based-action-recognition-review/tree/master/sources/2_3.jpg)
 
 - 联合空间/时序注意力机制
 
   - 带正则的损失函数
 
-![2_4](../youdaoyun/图片集/skeleton/2_4.jpg)
+![2_4](https://github.com/shuangshuangguo/skeleton-based-action-recognition-review/tree/master/sources/2_4.jpg)
 
 	- 第一个正则项促使空间注意力机制去动态地关注更多关键点，而不是病态地忽略很多关键点
 	- 第二个正则项可防止梯度消失
