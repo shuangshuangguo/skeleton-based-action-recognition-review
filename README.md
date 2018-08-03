@@ -19,7 +19,7 @@
 #### (2). 3D activity analysis datasets
 
 相对于只给出RGB视频的kinetics等数据集而言，该类动作数据集还提供了人物的skeleton信息等，各数据集大致对比如下图
-![datasets comparison](https://github.com/shuangshuangguo/skeleton-based-action-recognition-review/tree/master/sources/datasets comparison.jpg)
+!https://github.com/shuangshuangguo/skeleton-based-action-recognition-review/tree/master/sources/datasets comparison.jpg
 
 - NTU RGB+D
   - **目前最大的3d动作识别数据集**
@@ -53,7 +53,7 @@
   - 重复bottom-up和top-down操作，以及使用中层监督方式
 
 - hourglass网络结构
-![hourglass](https://github.com/shuangshuangguo/skeleton-based-action-recognition-review/tree/master/sources/hourglass.jpg)
+!https://github.com/shuangshuangguo/skeleton-based-action-recognition-review/tree/master/sources/hourglass.jpg
   - 每次降采样之前，分出上半路保留原尺度信息
   - 每次升采样之后，和上一个尺度的数据相加
   - 两次降采样之间，使用三个Residual模块提取特征
