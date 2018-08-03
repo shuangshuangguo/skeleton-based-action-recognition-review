@@ -19,7 +19,7 @@
 #### (2). 3D activity analysis datasets
 
 相对于只给出RGB视频的kinetics等数据集而言，该类动作数据集还提供了人物的skeleton信息等，各数据集大致对比如下图
-![datasets comparison](https://github.com/shuangshuangguo/skeleton-based-action-recognition-review/tree/master/sources/datasets_comparison.jpg)
+![datasets comparison](https://github.com/shuangshuangguo/skeleton-based-action-recognition-review/raw/master/sources/datasets_comparison.jpg)
 
 - NTU RGB+D
   - **目前最大的3d动作识别数据集**
