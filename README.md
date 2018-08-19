@@ -156,7 +156,7 @@ https://github.com/handong1587/handong1587.github.io/blob/master/_posts/deep_lea
 
   - 序列的类别得分由所有时刻的得分通过时序权重$\beta$加权得到
 
-![2_3](.https://github.com/shuangshuangguo/skeleton-based-action-recognition-review/raw/master/sources/2_3.jpg)
+![2_3](https://github.com/shuangshuangguo/skeleton-based-action-recognition-review/raw/master/sources/2_3.jpg)
 
 - 联合空间/时序注意力机制
 
