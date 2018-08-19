@@ -1,5 +1,4 @@
 ## skeleton-based action recognition summary
-https://github.com/shuangshuangguo/skeleton-based-action-recognition-review/raw/master/sources/6_5.jpg
 
 ### 1. Datasets
 
@@ -110,7 +109,7 @@ https://github.com/handong1587/handong1587.github.io/blob/master/_posts/deep_lea
 ![1_1](https://github.com/shuangshuangguo/skeleton-based-action-recognition-review/raw/master/sources/1_1.jpg)
   - 如何实现分组神经元：
 ![1_2](https://github.com/shuangshuangguo/skeleton-based-action-recognition-review/raw/master/sources/1_2.jpg)
-    - 在损失函数里增加co-occurrence正则项，$$W_{x\beta, k}$$表示第k组神经元的参数矩阵，若它能学到某些动作的关键点连接模式，那它将会是column sparse的，即loss最小
+    - 在损失函数里增加co-occurrence正则项，$W_{x\beta, k}$表示第k组神经元的参数矩阵，若它能学到某些动作的关键点连接模式，那它将会是column sparse的，即loss最小
 
 - 对LSTM网络的改进2：
 
@@ -139,7 +138,7 @@ https://github.com/handong1587/handong1587.github.io/blob/master/_posts/deep_lea
 
 ![2_1](https://github.com/shuangshuangguo/skeleton-based-action-recognition-review/raw/master/sources/2_1.jpg)
 
-  - 输入t时刻的关键点信息，经空间注意力机制模块后，每个关键点的信息被空间权重$$\alpha$$调制，后送入基本的LSTM分类网络，时序注意力机制模块输出的时序权重$$\beta$$加权不同时刻的LSTM输出
+  - 输入t时刻的关键点信息，经空间注意力机制模块后，每个关键点的信息被空间权重$\alpha$调制，后送入基本的LSTM分类网络，时序注意力机制模块输出的时序权重$$\beta$$加权不同时刻的LSTM输出
 
 - 空间注意力机制模块
 
@@ -149,13 +148,13 @@ https://github.com/handong1587/handong1587.github.io/blob/master/_posts/deep_lea
 
 ![2_2](https://github.com/shuangshuangguo/skeleton-based-action-recognition-review/raw/master/sources/2_2.jpg)
 
-  - 归一化上述得分即可得到每个关键点的权重$$\alpha$$
+  - 归一化上述得分即可得到每个关键点的权重$\alpha$
 
 - 时序注意力机制
 
   - 网络如上图所示，由一个LSTM层，两个全连接层，一个ReLU单元组成
 
-  - 序列的类别得分由所有时刻的得分通过时序权重$$\beta$$加权得到
+  - 序列的类别得分由所有时刻的得分通过时序权重$\beta$加权得到
 
 ![2_3](.https://github.com/shuangshuangguo/skeleton-based-action-recognition-review/raw/master/sources/2_3.jpg)
 
@@ -212,7 +211,7 @@ https://github.com/handong1587/handong1587.github.io/blob/master/_posts/deep_lea
 
 ![4_1](https://github.com/shuangshuangguo/skeleton-based-action-recognition-review/raw/master/sources/4_1.jpg)
 
-  其中，**R**为旋转矩阵，由网络学出的旋转参数$${\alpha, \beta, \gamma}$$构建得到，**d**为平移参数
+  其中，**R**为旋转矩阵，由网络学出的旋转参数${\alpha, \beta, \gamma}$构建得到，**d**为平移参数
 
   - 下图是更形象的表示：
 
@@ -222,9 +221,9 @@ https://github.com/handong1587/handong1587.github.io/blob/master/_posts/deep_lea
 
   ![4_3](https://github.com/shuangshuangguo/skeleton-based-action-recognition-review/raw/master/sources/4_3.jpg)
 
-  - View Adaptation subnetwork的两个分支都由LSTM和fc层构成，分别学习转换矩阵的旋转参数$${\alpha, \beta, \gamma}$$和平移参数$$d$$
+  - View Adaptation subnetwork的两个分支都由LSTM和fc层构成，分别学习转换矩阵的旋转参数${\alpha, \beta, \gamma}$和平移参数$d$
 
-    下式的$$h_t$$表示第t时刻LSTM层的输出
+    下式的$h_t$表示第t时刻LSTM层的输出
 
     ![4_4](https://github.com/shuangshuangguo/skeleton-based-action-recognition-review/raw/master/sources/4_4.jpg)
 
@@ -280,7 +279,7 @@ https://github.com/handong1587/handong1587.github.io/blob/master/_posts/deep_lea
 
       其中$$B(v_{ti})$$表示$$v_{ti}$$的邻域集合，$$l_{ti}(v_{tj})$$表示该邻域节点$$v_{tj}$$的权重大小
 
-  - 同理，空域GCN可推广到时空GCN(ST-GCN)，若两帧的时序距离小于$$T/2$$，则可认为属于这两帧的同一个关键点是邻域点
+  - 同理，空域GCN可推广到时空GCN(ST-GCN)，若两帧的时序距离小于$T/2$，则可认为属于这两帧的同一个关键点是邻域点
 
 - 如何将邻域划分为K个子集
 
