@@ -1,4 +1,5 @@
 ## skeleton-based action recognition summary
+https://github.com/shuangshuangguo/skeleton-based-action-recognition-review/raw/master/sources/6_5.jpg
 
 ### 1. Datasets
 
