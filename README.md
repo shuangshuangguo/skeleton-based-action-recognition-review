@@ -1,5 +1,6 @@
-[TOC]
-## action recognition review
+## This repo introduces some wonderful works for action recognition, especially the skeleton-based action recognition method.
+
+### action recognition review
 #### (1). Datasets
 
 - [Kinetics](https://deepmind.com/research/open-source/open-source-datasets/kinetics/)
@@ -32,11 +33,11 @@
   - ECO: Efficient Convolutional Network for Online Video Understanding [paper](https://arxiv.org/pdf/1804.09066.pdf) [code](https://github.com/mzolfaghari/ECO-efficient-video-understanding)
 
 
-## skeleton-based action recognition summary
+### skeleton-based action recognition summary
 
-### 1. Datasets
+#### 1. Datasets
 
-#### (1). pose estimation
+##### (1). pose estimation
 
 给定图片，设计相关网络学习图片中人物的关键点信息
 
@@ -50,7 +51,7 @@
   - 样本数：21W Training, 3W Validation, 3W Testing，关节点个数：14
   - 全身，多人，38W people
 
-#### (2). 3D activity analysis datasets
+##### (2). 3D activity analysis datasets
 
 相对于只给出RGB视频的kinetics等数据集而言，该类动作数据集还提供了人物的skeleton信息等，各数据集大致对比如下图
 ![datasets comparison](https://github.com/shuangshuangguo/skeleton-based-action-recognition-review/raw/master/sources/datasets_comparison.jpg)
@@ -76,11 +77,11 @@
 
 
 
-### 2. Methods
+#### 2. Methods
 
-#### (1). pose estimation methods
+##### (1). pose estimation methods
 
-#### [1]. [Stacked Hourglass Networks for Human Pose Estimation](https://arxiv.org/pdf/1603.06937.pdf)
+##### [1]. [Stacked Hourglass Networks for Human Pose Estimation](https://arxiv.org/pdf/1603.06937.pdf)
 
 - 估计姿势信息需要了解全局，不同关键点之间的连接关系分布在各个尺度上，设计的网络需要同时捕捉到这些不同尺度的特征并做出pixel-wise的预测
 
@@ -96,15 +97,15 @@
 
 - 整体网络结构由几个hourglass网络堆叠而成，且在每个hourglass模块的输出处都引入监督信息
 
-#### Other References 
+##### Other References 
 
 https://github.com/handong1587/handong1587.github.io/blob/master/_posts/deep_learning/2015-10-09-pose-estimation.md
 
 
 
-#### (2). 3d action recognition
+##### (2). 3d action recognition
 
-#### 效果概览
+##### 效果概览
 
 | paper id | NTU RGB+D(cs, cv) |  SBU   |
 | :------: | :---------------: | :----: |
@@ -129,7 +130,7 @@ https://github.com/handong1587/handong1587.github.io/blob/master/_posts/deep_lea
 - 基于CNN的动作识别框架
   - 将skeleton序列表示为一张大小为(**序列长度, 关键点个数, 关键点维度**)的图像，如一段帧数为32且每帧包含16个关键点的二维信息的序列可以表示为(32, 16, 2)的tensor
 
-#### [1]. [Co-occurrence Feature Learning for Skeleton based Action Recognition using Regularized Deep LSTM Networks](https://arxiv.org/pdf/1603.07772.pdf)
+##### [1]. [Co-occurrence Feature Learning for Skeleton based Action Recognition using Regularized Deep LSTM Networks](https://arxiv.org/pdf/1603.07772.pdf)
 
 - 什么是**Co-occurrence**
 
@@ -157,7 +158,7 @@ https://github.com/handong1587/handong1587.github.io/blob/master/_posts/deep_lea
 
     
 
-#### [2]. [An End-to-End Spatio-Temporal Attention Model for Human Action Recognition from Skeleton Data](https://arxiv.org/pdf/1611.06067.pdf)
+##### [2]. [An End-to-End Spatio-Temporal Attention Model for Human Action Recognition from Skeleton Data](https://arxiv.org/pdf/1611.06067.pdf)
 
 - 出发点：
 
@@ -202,7 +203,7 @@ https://github.com/handong1587/handong1587.github.io/blob/master/_posts/deep_lea
 	- 第二个正则项可防止梯度消失
 	- 第三个正则项可防止网络过拟合
 
-#### [3]. [SKELETON-BASED ACTION RECOGNITION USING LSTM AND CNN](https://arxiv.org/pdf/1707.02356.pdf)
+##### [3]. [SKELETON-BASED ACTION RECOGNITION USING LSTM AND CNN](https://arxiv.org/pdf/1707.02356.pdf)
 
 - 基于CNN的方法将skeleton序列表示为图片难免会损失时序信息，所以希望和lstm相辅相成
 
@@ -235,7 +236,7 @@ https://github.com/handong1587/handong1587.github.io/blob/master/_posts/deep_lea
   - lstm有3层，cnn网络是AlexNet的结构
 ![3_4](.https://github.com/shuangshuangguo/skeleton-based-action-recognition-review/raw/master/sources/3_4.jpg)
 
-#### [4]. [View Adaptive Neural Networks for High Performance Skeleton-based Human Action Recognition](https://arxiv.org/pdf/1804.07453.pdf)
+##### [4]. [View Adaptive Neural Networks for High Performance Skeleton-based Human Action Recognition](https://arxiv.org/pdf/1804.07453.pdf)
 
 - 现实场景中常包含多种不同视角的摄像头，而同一个动作在不同视角下存在着较大差异。这篇论文主要解决diversity of view的问题，学习到最合适的observation viewpoints，并将原始skeleton信息转换到此坐标系下的信息，之后再通过rnn或cnn进行动作分类，这样可以尽可能减少不同视角带来的影响
 
@@ -271,7 +272,7 @@ https://github.com/handong1587/handong1587.github.io/blob/master/_posts/deep_lea
   - View Adaptation subnetwork由2个卷积层和1个fc层构成，卷积层的配置均为：channels=128, kernel size=5, stride=2
   - main convet是ResNet-50
 
-#### [5]. [Co-occurrence Feature Learning from Skeleton Data for Action Recognition and Detection with Hierarchical Aggregation](https://arxiv.org/pdf/1804.06055.pdf)
+##### [5]. [Co-occurrence Feature Learning from Skeleton Data for Action Recognition and Detection with Hierarchical Aggregation](https://arxiv.org/pdf/1804.06055.pdf)
 
 - 之前基于CNN的常规做法是将关键点维度信息放在channel维度，这样可以学到相互独立的point-level feature，但是更希望发掘不同关键点之间的关系，希望根据所有关键点学到一种全局响应，毕竟action是由所有关键点共同作用而成，那么此时就可以**将关键点放在channel维度****(卷积层的输出是所有输入通道的全局响应)**
 
@@ -283,7 +284,7 @@ https://github.com/handong1587/handong1587.github.io/blob/master/_posts/deep_lea
 
   ![5_1](https://github.com/shuangshuangguo/skeleton-based-action-recognition-review/raw/master/sources/5_1.jpg)
 
-#### [6]. [Spatial Temporal Graph Convolutional Networks for Skeleton-Based Action Recognition](https://arxiv.org/pdf/1801.07455.pdf)
+##### [6]. [Spatial Temporal Graph Convolutional Networks for Skeleton-Based Action Recognition](https://arxiv.org/pdf/1801.07455.pdf)
 
 - 如何理解图卷积GCN：移步https://www.zhihu.com/question/54504471/answer/153095639
 
@@ -338,7 +339,7 @@ https://github.com/handong1587/handong1587.github.io/blob/master/_posts/deep_lea
 
     ![6_5](https://github.com/shuangshuangguo/skeleton-based-action-recognition-review/raw/master/sources/6_5.jpg)
 
-#### Other references：
+##### Other references：
 
 1. [A new representation of skeleton sequences for 3d action recognition](https://arxiv.org/pdf/1703.03492.pdf)
 
