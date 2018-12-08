@@ -1,4 +1,4 @@
-## This repo introduces some wonderful works for action recognition, especially the skeleton-based action recognition method.
+#### This repo introduces some wonderful works for action recognition, especially the skeleton-based action recognition method.
 
 ### action recognition review
 #### (1). Datasets
